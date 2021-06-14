@@ -17,7 +17,7 @@
     "password": 123
 }
 
-the url is: http://localhost:3000/login
+the url is: http://localhost:3000/login    and the port is 3000
 
 2. Get the response, you will get a token (copy the token) 
 3. create a GET request and use this url http://localhost:3000/data
