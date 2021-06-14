@@ -32,8 +32,10 @@ export const TokenValidations=(req: Request, res: Response, next: NextFunction)=
         });
     }
     try{
-        jwt.verify(token , process.env.SECRETKEY);
+       const {password, email}= jwt.verify(token , process.env.SECRETKEY);
         console.log(token);
+        req.params.email=email;
+        req.params.password=password;
         next();
     }
     catch(err){
@@ -90,7 +92,9 @@ export const login=async (req: Request, res: Response, next: NextFunction)=>{
 
 
 export const metodoGet=(req: Request, res: Response, next: NextFunction)=>{
-    res.status(200).json('hola mundo')
+    res.status(200).json({
+        msg: `Bienvendio usuario: ${req.params.email}`,
+        pass: `Su password es: ${req.params.password} y fue loggeado correctamente`
+    })
 }
 
-///holaaaaaaaaaaaaaS

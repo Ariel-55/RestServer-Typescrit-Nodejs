@@ -1,6 +1,25 @@
+#Installations
+1. Node js and npm (check installations with node -v and npm -v)
+2. npm install -g typescript (check installation with tsc -v)
+
+
 #Commands to run the roject 
-npm init
-2. tsc --init
-3. package.json "start node dist/server.js"
-4. tsconfig-outdair: "dist"
-5. 
+
+1. npm install (to instal node_module)
+2. tsc (to comile the typescript code to Java scrit)
+3. npm start (to run the project)
+
+#Login 
+1. Create a post request , send this json
+
+{
+    "email": "ariel_leon55@outlook.com",
+    "password": 123
+}
+
+thue url is: http://localhost:3000/login
+
+2. Get the response, you will get a token (copy the token) 
+3. create a get request and use this url http://localhost:3000/data
+4. create the header called "x-token" and give the value of the token
+5. send the request and see the results
