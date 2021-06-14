@@ -1,4 +1,4 @@
-#Installations
+# Installations
 1. Node js and npm (check installations with node -v and npm -v)
 2. Execute "npm install -g typescript" to isntall typescrit (check installation with tsc -v)
 
