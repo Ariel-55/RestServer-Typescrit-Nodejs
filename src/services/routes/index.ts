@@ -1,15 +1,15 @@
 import {Route} from '../../model/types';
-import {login, metodoGet} from '../../utils/index';
+import {login, metodoGet, TokenValidations, validations} from '../../utils/index';
 
 export const asociadasRoutes: Route[]=[
     {
         path: '/login',
         method: 'post',
-        handler: login
+        handler: [validations, login]
     },
     {
-        path: '/',
+        path: '/data',
         method: 'get',
-        handler: metodoGet
+        handler: [TokenValidations, metodoGet]
     }
 ]

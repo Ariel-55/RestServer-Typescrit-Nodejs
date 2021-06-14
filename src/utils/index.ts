@@ -1,7 +1,9 @@
 import {Router, Request, Response, NextFunction} from 'express';
+import { nextTick } from 'process';
 import {mensajeRegistro, Route, Wrapper} from '../model/types';
 import { HTTP404Error, HTTP401Error } from './httpErrors';
-
+import {generarJWT} from './JWT';
+const jwt = require('jsonwebtoken');
 
 export const applyMiddleware=(
     middlewareWrapper: Wrapper [],
@@ -21,28 +23,54 @@ export const applyRoutes=( routes: Route[], router: Router)=>{
 
 }
 
+export const TokenValidations=(req: Request, res: Response, next: NextFunction)=>{
+    const token= req.header('x-token');
+    if(!token){
+        throw new HTTP404Error({
+            success: false,
+            error:`No token provided`
+        });
+    }
+    try{
+        jwt.verify(token , process.env.SECRETKEY);
+        console.log(token);
+        next();
+    }
+    catch(err){
+            res.status(401).json({
+                msg: 'Token no valido'
+            })
+    }
 
+}
 
-
-export const login=(req: Request, res: Response, next: NextFunction)=>{
+export const validations= (req: Request, res: Response, next: NextFunction)=>{
     const  {password, email}=req.body;
 
     if(!password || !email ){
         throw new HTTP404Error({
             success: false,
             error:`No user Provided`
-        })
+        });
     }
-    else if(password != process.env.password || email!=process.env.email){
+    if(password != process.env.password || email!=process.env.email){
         throw new HTTP404Error({
             success: false,
             error:`Password or email incorrect`
-        })
+        });
     }    
+    next();
+}
+
+export const login=async (req: Request, res: Response, next: NextFunction)=>{
+    const  {password, email}=req.body;
 
     try{
 
+        const token:any = await  generarJWT({password, email});
+
         let respuesta: mensajeRegistro={
+            token,
             message: "The User exists",
             password,
             email

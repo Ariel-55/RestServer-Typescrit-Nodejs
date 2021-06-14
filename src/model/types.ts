@@ -11,10 +11,11 @@ export type Handler=(
 export type Route={
     path: string,
     method: string,
-    handler: Handler
+    handler: Handler | Handler []
 }
 
 export type mensajeRegistro={
+    token: any,
     message: string,
     password: string,
     email: string
