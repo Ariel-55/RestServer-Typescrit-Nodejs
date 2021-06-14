@@ -15,6 +15,7 @@ export type Route={
 }
 
 export type mensajeRegistro={
+    message: string,
     password: string,
     email: string
 }

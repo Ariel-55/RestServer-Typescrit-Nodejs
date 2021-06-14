@@ -4,6 +4,9 @@ import {asociadasRoutes} from './services/routes';
 import middleware from './middleware';
 import parser from 'body-parser';
 import errorHandlers from './middleware/errorHandlers';
+import {config} from 'dotenv';
+import {resolve} from 'url';
+config({path: resolve(__dirname, '.env')});
 
 const app=express();
 

@@ -33,10 +33,17 @@ export const login=(req: Request, res: Response, next: NextFunction)=>{
             error:`No user Provided`
         })
     }
+    else if(password != process.env.password || email!=process.env.email){
+        throw new HTTP404Error({
+            success: false,
+            error:`Password or email incorrect`
+        })
+    }    
 
     try{
 
         let respuesta: mensajeRegistro={
+            message: "The User exists",
             password,
             email
         }
