@@ -1,13 +1,13 @@
 #Installations
 1. Node js and npm (check installations with node -v and npm -v)
-2. run "npm install -g typescript" to isntall typescrit (check installation with tsc -v)
+2. Execute "npm install -g typescript" to isntall typescrit (check installation with tsc -v)
 
 
 #Commands to run the roject 
 
-1. run "npm install" (to instal node_modules)
-2. run "tsc" (to comile the typescript code to Java scrit)
-3. run "npm start" (to run the project)
+1. Execute "npm install" (to instal node_modules)
+2. Execute "tsc" (to comile the typescript code to Java scrit)
+3. Execute "npm start" (to run the project)
 
 #Login 
 1. Create a POST request , send this json
