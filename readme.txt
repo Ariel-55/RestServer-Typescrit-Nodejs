@@ -10,16 +10,16 @@
 3. run "npm start" (to run the project)
 
 #Login 
-1. Create a post request , send this json
+1. Create a POST request , send this json
 
 {
     "email": "ariel_leon55@outlook.com",
     "password": 123
 }
 
-thue url is: http://localhost:3000/login
+the url is: http://localhost:3000/login
 
 2. Get the response, you will get a token (copy the token) 
-3. create a get request and use this url http://localhost:3000/data
+3. create a GET request and use this url http://localhost:3000/data
 4. create the header called "x-token" and give the value of the token
 5. send the request and see the results
