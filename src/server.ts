@@ -14,7 +14,7 @@ applyMiddleware(middleware,app);
 applyRoutes(asociadasRoutes,app);
 applyMiddleware(errorHandlers,app)
 
-app.listen(process.env.PORT ||3000, ()=> console.log('servidor corriendo en el puerto 3000'));
+app.listen(process.env.PORT ||8080, ()=> console.log('servidor corriendo en el puerto 8080'));
 
 console.log('hola mundo');
 console.log('lol');
