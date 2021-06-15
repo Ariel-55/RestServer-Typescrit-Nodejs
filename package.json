@@ -2,19 +2,10 @@
   "name": "base-api",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "server.js",
   "engines": {
     "node": "12.16.3",
-    "npm": "6.14.12"
-  },
-  "comilerOptions":{
-    
-    "include" : [
-      "src/**/*.ts"  
-    ],
-    "exclude" : [
-      "node_modules"  
-    ]
+     "npm": "6.14.12"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
