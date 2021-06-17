@@ -1,3 +1,12 @@
+# test the rest server that is hosted in HEROKU
+https://rest-server-typescript.herokuapp.com/login
+Create POST request, send this JSON
+{
+    "email": "ariel_leon55@outlook.com",
+    "password": 123
+}
+
+
 # Installation
 
 1. Node js and npm (check installations with node -v and npm -v)
